@@ -8,7 +8,9 @@ test("it should have a correct initial value when set to 7", () => {
 });
 
 test("it should have an initial value set to 0", () => {
-  throw new Error();
+  render(<AwesomeCounter />);
+  const count = screen.queryByText(0);
+  expect(count).toBeVisible();
 });
 
 test("it should increase the value when add is clicked twice", () => {

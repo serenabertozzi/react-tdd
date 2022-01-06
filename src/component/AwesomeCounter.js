@@ -4,7 +4,7 @@ const AwesomeCounter = ({ initialValue }) => {
   return (
     <div>
       <h1>Awesome Counter</h1>
-      <span>{initialValue}</span>
+      <span>{initialValue ?? 0}</span>
     </div>
   );
 };
