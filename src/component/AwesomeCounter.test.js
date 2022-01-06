@@ -40,5 +40,24 @@ test("it should decrease the value when remove is clicked twice", () => {
 });
 
 test("it should not allow a negative number when initial value is 0 and remove is clicked", () => {
-  throw new Error();
+  render(<AwesomeCounter initialValue={0} />);
+  const removeButton = screen.queryByText("Remove");
+  userEvent.click(removeButton);
+  const count = screen.queryByText(0);
+  expect(count).toBeVisible();
 });
+
+test("it should not allow a negative number when initial value is 2 and remove is clicked", () => {
+  render(<AwesomeCounter initialValue={2} />);
+  const removeButton = screen.queryByText("Remove");
+  userEvent.click(removeButton);
+  userEvent.click(removeButton);
+  userEvent.click(removeButton);
+  userEvent.click(removeButton);
+  const count = screen.queryByText(0);
+  expect(count).toBeVisible();
+});
+
+// test("start a test throwing an error or it will pass", () => {
+//   throw new Error();
+// });
