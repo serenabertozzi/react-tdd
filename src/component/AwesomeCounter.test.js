@@ -32,7 +32,11 @@ test("it should increase the value when add is clicked twice", () => {
 });
 
 test("it should decrease the value when remove is clicked twice", () => {
-  throw new Error();
+  render(<AwesomeCounter initialValue={5} />);
+  const removeButton = screen.queryByText("Remove");
+  userEvent.click(removeButton);
+  const count = screen.queryByText(4);
+  expect(count).toBeVisible();
 });
 
 test("it should not allow a negative number when initial value is 0 and remove is clicked", () => {

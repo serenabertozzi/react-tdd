@@ -7,10 +7,14 @@ const AwesomeCounter = ({ initialValue }) => {
   const add = () => {
     setCount((prevCount) => prevCount + 1);
   };
+  const remove = () => {
+    setCount((prevCount) => prevCount - 1);
+  };
 
   return (
     <div>
       <h1>Awesome Counter</h1>
+      <button onClick={remove}>Remove</button>
       <span>{count}</span>
       <button onClick={add}>Add</button>
     </div>
