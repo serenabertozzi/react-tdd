@@ -1,8 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
+import AwesomeCounter from "./component/AwesomeCounter";
 
 function App() {
-  return <div className="App">Awesome Counter</div>;
+  return (
+    <div className="App">
+      <AwesomeCounter />
+    </div>
+  );
 }
 
 export default App;
