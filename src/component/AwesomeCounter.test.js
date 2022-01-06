@@ -23,7 +23,12 @@ test("it should increase the value when add is clicked once", () => {
 });
 
 test("it should increase the value when add is clicked twice", () => {
-  throw new Error();
+  render(<AwesomeCounter initialValue={1} />);
+  const addButton = screen.queryByText("Add");
+  userEvent.click(addButton);
+  userEvent.click(addButton);
+  const count = screen.queryByText(3);
+  expect(count).toBeVisible();
 });
 
 test("it should decrease the value when remove is clicked twice", () => {
