@@ -1,9 +1,10 @@
 import React from "react";
 
-const AwesomeCounter = () => {
+const AwesomeCounter = ({ initialValue }) => {
   return (
     <div>
       <h1>Awesome Counter</h1>
+      <span>{initialValue}</span>
     </div>
   );
 };
